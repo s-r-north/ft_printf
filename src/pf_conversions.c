@@ -32,7 +32,7 @@ char	*short_char(va_list ap, t_mods *sm)
 	if (sm->wid * (sm->wid < 0 ? -1 : 1) > 1)
 		ft_memset(p, (CHKFL(sm->fl, zero) && sm->wid >= 0) ?
 			'0' : ' ', sm->wid * (sm->wid < 0 ? -1 : 1));
-	if (sm->c == 'c')
+	if (sm->c == 'c' || sm->c == 'C')
 		c = (char)va_arg(ap, int);
 	else
 		c = sm->c;

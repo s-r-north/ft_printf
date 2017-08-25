@@ -18,9 +18,9 @@ int		eval_data_type(t_mods *sm, va_list ap, char **s, int n)
 
 	if (ft_strchr("idDuUboOxXp", sm->c))
 		end = int_nums(ap, sm);
-	else if (sm->c == 'c' && !(sm->len & 1 << L))
+	else if (sm->c == 'c' || sm->c == 'C')
 		end = short_char(ap, sm);
-	else if (sm->c == 's' && !(sm->len & 1 << L))
+	else if (sm->c == 's' || sm->c == 'S')
 		end = short_str(ap, sm);
 	else if (sm->c == 'n')
 		end = store_n(ap, n);
